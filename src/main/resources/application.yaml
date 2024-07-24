@@ -1,0 +1,28 @@
+fint:
+  kafka:
+    topic:
+      org-id: fintlabs.no
+      domain-context: poc
+    application-id: kafka-compact-poc
+#    enable-ssl: false
+    default-replicas: 1
+
+spring:
+  kafka:
+    consumer:
+      group-id: kafka-compact-poc
+#  codec:
+#    max-in-memory-size: 200MB
+#    bootstrap-servers: localhost:9092
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+logging:
+  level:
+    root: WARN
+    org.apache.kafka: WARN
+    no.fintlabs.compact: INFO
